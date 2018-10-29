@@ -1,0 +1,25 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">NeoHotel</a>
+    </div>
+    <nav class="navigation row" id = "navigation_bar" style="float: right; margin-right: 50px;">
+      <span class="menu"></span>
+      <ul class="nav navbar-nav" style="font-size: 20px !important">
+        <li><a href="/rooms" class="hvr-bounce-to-bottom fa fa-bed"> Rooms</a></li>
+        <% if user_signed_in? %>
+          <li><%= link_to 'Bookings', bookings_path, class: "hvr-bounce-to-bottom fa fa-book" %></li>
+          <li>
+            <a class="hvr-bounce-to-bottom" ><%= current_user.email %></a>
+          </li>
+          <li><%= link_to 'Log out', destroy_user_session_path, class: "hvr-bounce-to-bottom fa fa-sign-out", method: :delete %></li>
+
+          </li>
+        <% else %>
+           <li><a href="/users/sign_up" class="hvr-bounce-to-bottom fa fa-user-plus"> Sign Up</a></li>
+           <li><a href="/users/sign_in" class="hvr-bounce-to-bottom fa fa-sign-in"> Login</a></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</nav>

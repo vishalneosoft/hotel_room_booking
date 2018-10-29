@@ -1,0 +1,10 @@
+<div class="services">
+  <div class="container">
+    <div class="col-md-6 services-left">
+      <%= render "room_#{params['room_type'].to_i}"%>
+    </div>
+    <div class="col-md-6 services-right" style = "background-color: #4b4f50;">
+      <%= render "bookings/form"%>
+    </div>
+  </div>
+</div>

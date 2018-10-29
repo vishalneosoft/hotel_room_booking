@@ -1,0 +1,38 @@
+<div class = "booking">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="row">
+        <div class=" col-md-12 col-lg-12 ">
+          <table class="table booking-information">
+            <tbody>
+              <tr>
+                <th>Room No :</td>
+                <td><%= @booking.room.room_no %></td>
+              </tr>
+              <tr>
+                <th>Check In :</td>
+                <td><%= @booking.start_date %></td>
+              </tr>
+              <tr>
+                <th>Check Out :</td>
+                <td><%= @booking.last_date %></td>
+              </tr>
+              <tr>
+                <th>Room Type :</td>
+                <td><%= @booking.room.room_type %></td>
+              </tr>
+              <tr>
+                <th>Cost per room :</td>
+                <td><%= @booking.room.price %></td>
+              </tr>
+              <tr>
+                <th>Total Cost :</td>
+                <td><%= @booking.cost %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
