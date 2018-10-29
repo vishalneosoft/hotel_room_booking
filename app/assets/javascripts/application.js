@@ -23,6 +23,11 @@
 
 $(document).ready(function($) {
 
+  var email_validation = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  $.validator.addMethod("email", function(email_id, element) {
+    return email_validation.test(email_id);
+  }, "Please specify a valid email address");
+
   $("#rooms-availability").validate({
     rules: {
       check_in: "required",

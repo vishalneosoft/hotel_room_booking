@@ -6,7 +6,7 @@
       <% end %>
     </ul>
   </div>
-<% elsif params[:room_type].empty? %>
+<% elsif params[:room_type].blank? %>
   <table class="col-sm-12 ">
     <thead>
       <tr>
@@ -17,24 +17,24 @@
     </thead>
     <tbody>
       <tr>
-        <td>Deluxe Rooms</td>
-        <td><%=@deluxe%></td>
-        <td><%= link_to 'Book Now', new_booking_path(room_type:0, start_date: params[:check_in], last_date: params[:check_out]), class: 'btn btn-primary btn-sm mb-10'%></td>
+        <th>Deluxe Rooms</td>
+        <td><%= @deluxe %></td>
+        <td><%= link_to 'Book Now', new_booking_path(room_type: 0, start_date: params[:check_in], last_date: params[:check_out]), class: 'btn btn-primary btn-sm mb-10'%></td>
       </tr>
       <tr>
-        <td>Luxury Rooms</td>
-        <td><%=@lux_room%></td>
-        <td><%= link_to 'Book Now', new_booking_path(room_type:1, start_date: params[:check_in], last_date: params[:check_out]), class: 'btn btn-primary btn-sm mb-10'%></td>
+        <th>Luxury Rooms</td>
+        <td><%= @luxury_room %></td>
+        <td><%= link_to 'Book Now', new_booking_path(room_type: 1, start_date: params[:check_in], last_date: params[:check_out]), class: 'btn btn-primary btn-sm mb-10'%></td>
       </tr>
       <tr>
-        <td>Luxury suites</td>
-        <td><%=@lux_suite%></td>
-        <td><%= link_to 'Book Now', new_booking_path(room_type:2, start_date: params[:check_in], last_date: params[:check_out]), class: 'btn btn-primary btn-sm mb-10'%></td>
+        <th>Luxury suites</td>
+        <td><%= @luxury_suite %></td>
+        <td><%= link_to 'Book Now', new_booking_path(room_type: 2, start_date: params[:check_in], last_date: params[:check_out]), class: 'btn btn-primary btn-sm mb-10'%></td>
       </tr>
       <tr>
-        <td>Presidential Suites</td>
-        <td><%=@pres_suite%></td>
-        <td><%= link_to 'Book Now', new_booking_path(room_type:3, start_date: params[:check_in], last_date: params[:check_out]), class: 'btn btn-primary btn-sm mb-10'%></td>
+        <th>Presidential Suites</td>
+        <td><%= @presidential_suite %></td>
+        <td><%= link_to 'Book Now', new_booking_path(room_type: 3, start_date: params[:check_in], last_date: params[:check_out]), class: 'btn btn-primary btn-sm mb-10'%></td>
       </tr>
     </tbody>
   </table>
@@ -50,8 +50,8 @@
     <tbody>
       <tr>
         <td><%= params[:room_type]%></td>
-        <td><%=@rooms%></td>
-        <td><%= link_to 'Book Now', new_booking_path(room_type:0), class: 'btn btn-primary btn-sm'%></td>
+        <td><%= @rooms %></td>
+        <td><%= link_to 'Book Now', new_booking_path(room_type: Room.room_types[params[:room_type]], start_date: params[:check_in], last_date: params[:check_out]), class: 'btn btn-primary btn-sm'%></td>
       </tr>
     </tbody>
   </table>

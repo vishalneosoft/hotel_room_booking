@@ -16,9 +16,9 @@ class RoomsController < ApplicationController
       return false
     elsif params[:room_type].empty?
       @deluxe = Room.available_rooms(params[:check_in], params[:check_out], 'Deluxe Rooms').count
-      @lux_room = Room.available_rooms(params[:check_in], params[:check_out], 'Luxury Rooms').count
-      @lux_suite = Room.available_rooms(params[:check_in], params[:check_out], 'Luxury suites').count
-      @pres_suite = Room.available_rooms(params[:check_in], params[:check_out], 'Presidential Suites').count
+      @luxury_room = Room.available_rooms(params[:check_in], params[:check_out], 'Luxury Rooms').count
+      @luxury_suite = Room.available_rooms(params[:check_in], params[:check_out], 'Luxury suites').count
+      @presidential_suite = Room.available_rooms(params[:check_in], params[:check_out], 'Presidential Suites').count
     else
       @rooms = Room.available_rooms(params[:check_in], params[:check_out], params[:room_type]).count
     end
