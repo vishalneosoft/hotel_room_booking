@@ -1668,3 +1668,6 @@ textarea.form-control {
 .error {
   color: red;
 }
+.container .wrapper {
+  min-height:  590px;
+}
